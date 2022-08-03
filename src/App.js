@@ -1,7 +1,7 @@
 import { Header } from './components/Header/header';
 import React, { useEffect, useState } from 'react';
 import { Countries } from './components/Country/countries';
-import "./components/Hero/hero.css"
+import './components/Hero/hero.css';
 
 function App() {
 	const [countries, setCountries] = useState([]);
@@ -9,14 +9,14 @@ function App() {
 	const [select, setSelect] = useState('');
 
 	useEffect(() => {
-		if (value.length) {
-			fetch(`https://restcountries.com/v3.1/name/${value}`)
+		if (select.length) {
+			fetch(`https://restcountries.com/v3.1/region/${select}`)
 				.then((res) => res.json())
 				.then((data) => setCountries(data))
 				.catch((er) => console.log(er));
 		}
-		else if (select.length) {
-			fetch(`https://restcountries.com/v3.1/region/${select}`)
+		if (value.length) {
+			fetch(`https://restcountries.com/v3.1/name/${value}`)
 				.then((res) => res.json())
 				.then((data) => setCountries(data))
 				.catch((er) => console.log(er));
