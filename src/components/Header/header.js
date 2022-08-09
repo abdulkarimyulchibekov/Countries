@@ -1,16 +1,18 @@
 import './header.css';
-import moon from '../../assets/images/moon.svg';
+import { ThemeContext } from '../../Context/ThemeContext';
+import { useContext } from 'react';
 
 const Header = () => {
+	const {theme, setTheme} = useContext(ThemeContext);
 	return (
-		<header className='header'>
+		<header className={`header ${theme}`}>
 			<div className='container'>
 				<div className='header__inner'>
-					<p className='header__text'>Where in the world?</p>
-					<div className='header__box'>
-						<img className='header__img' src={moon} />
-						<p className='header__desc'>Dark Mode</p>
-					</div>
+					<p className={`header__text ${theme}`}>Where in the world?</p>
+					<select defaultValue={theme} onChange={(evt) => setTheme(evt.target.value)} className={`header__box ${theme}`}>
+						<option className='header__desc'>Dark</option>
+						<option className='header__desc'>Light</option>
+					</select>
 				</div>
 			</div>
 		</header>

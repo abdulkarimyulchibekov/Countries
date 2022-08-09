@@ -31,6 +31,16 @@
   background-position: left 35px center;
 }
 
+.hero__input.Dark {
+  background: #2B3844;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  color: #fff;
+  background-image: url("../../assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: left 35px center;
+}
+
 select {
   background: #FFFFFF;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -40,6 +50,7 @@ select {
 
 select {
   display: block;
+  margin: 10px;
   width: 100%;
   max-width: 200px;
   font-size: 1rem;
@@ -58,23 +69,29 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
 @media (prefers-reduced-motion: reduce) {
   select {
     transition: none;
   }
 }
+
 select:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-select[multiple], select[size]:not([size="1"]) {
+
+select[multiple],
+select[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
+
 select:disabled {
   background-color: #e9ecef;
 }
+
 select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
